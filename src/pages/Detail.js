@@ -59,7 +59,7 @@ const Detail = () => {
     if(detail){
       axios({
         method: "get",
-        url: `http://localhost:5001/course/detail?detail=${detail}`,
+        url: `https://tutorials-nap0.onrender.com/course/detail?detail=${detail}`,
       }).then(response => {
         if(response.data.status === true){
           setCourse(response.data.data)

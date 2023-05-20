@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:5001/course/categories",
+      url: "https://tutorials-nap0.onrender.com/course/categories",
     }).then(response => {
       if(response.data.status === true){
         setCategories(response.data.data)
@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:5001/course",
+      url: "https://tutorials-nap0.onrender.com/course",
     }).then(response => {
       if(response.data.status === true){
         setCourses(response.data.data)

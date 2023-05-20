@@ -44,12 +44,12 @@ const Home = (params) => {
     useEffect(() => {
         if(page > 1) {
             setInnerLoading(true)
-            let url = `http://localhost:5001/course?page=${page}`
+            let url = `https://tutorials-nap0.onrender.com/course?page=${page}`
             if(filterCat && filterCat != '') {
-                url = `http://localhost:5001/course?page=${page}&category=${filterCat}`
+                url = `https://tutorials-nap0.onrender.com/course?page=${page}&category=${filterCat}`
             }
             if(text !== ''){
-                url = `http://localhost:5001/course/search?key=${text}&page=${page}`
+                url = `https://tutorials-nap0.onrender.com/course/search?key=${text}&page=${page}`
             }
             axios({
                 method: "get",
@@ -61,7 +61,6 @@ const Home = (params) => {
                         setCourses(pre => [...pre, el])
                     }
                     setInnerLoading(false)
-                    console.log(response.data.data)
                 }else {
                     console.log(response.data.message)
                 }
@@ -77,7 +76,7 @@ const Home = (params) => {
             setFilterCat(null)
             axios({
                 method: "get",
-                url: `http://localhost:5001/course/search?key=${text}`,
+                url: `https://tutorials-nap0.onrender.com/course/search?key=${text}`,
             }).then(response => {
                 if(response.data.status === true){
                 setCourses(response.data.data)
@@ -96,9 +95,9 @@ const Home = (params) => {
             setLoading(true)
             setText('')
             setPage(1)
-            let url = `http://localhost:5001/course`
+            let url = `https://tutorials-nap0.onrender.com/course`
             if('' !== filterCat){
-                url = `http://localhost:5001/course?category=${filterCat}`
+                url = `https://tutorials-nap0.onrender.com/course?category=${filterCat}`
             }
             axios({
                 method: "get",
